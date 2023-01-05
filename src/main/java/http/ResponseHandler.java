@@ -1,7 +1,12 @@
 package http;
 
 public class ResponseHandler {
-    public String getStringResponse(String request) {
-        return request;
+    String pageNotFoundResponse;
+    public ResponseHandler() {
+        pageNotFoundResponse = "HTTP/1.1 404 Not Found\r\n\r\n";
+    }
+
+    public byte[] getPageNotFoundResponse() {
+        return pageNotFoundResponse.getBytes();
     }
 }
