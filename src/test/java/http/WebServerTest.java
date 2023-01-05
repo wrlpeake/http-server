@@ -13,8 +13,8 @@ public class WebServerTest {
 
     @BeforeEach
     public void setup() throws IOException {
-        webServer = new WebServer(8080);
-        client = new TestClient(8080);
+        webServer = new WebServer(5000);
+        client = new TestClient(5000);
     }
 
 

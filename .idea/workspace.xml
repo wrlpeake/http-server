@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Page Not Found returns 404">
-      <change afterPath="$PROJECT_DIR$/src/main/java/http/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/http/ClientHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/http/InputOutput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/http/TestClient.java" afterDir="false" />
+    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Refactoring 404 response and updating test to use web server and test client borrowed from echo server">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/http/RequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/RequestHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/http/ResponseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/ResponseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/http/WebServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/WebServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/http/WebServerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/http/WebServerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +77,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671553769946</updated>
-      <workItem from="1671553771364" duration="29836000" />
+      <workItem from="1671553771364" duration="31045000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1671554143949</created>
@@ -108,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672841283883</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Refactoring 404 response and updating test to use web server and test client borrowed from echo server">
+      <created>1672923006176</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1672923006176</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +128,7 @@
     <MESSAGE value="Initial commit." />
     <MESSAGE value="Add README.md" />
     <MESSAGE value="Page Not Found returns 404" />
-    <option name="LAST_COMMIT_MESSAGE" value="Page Not Found returns 404" />
+    <MESSAGE value="Refactoring 404 response and updating test to use web server and test client borrowed from echo server" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring 404 response and updating test to use web server and test client borrowed from echo server" />
   </component>
 </project>
