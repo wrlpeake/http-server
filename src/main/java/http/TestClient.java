@@ -8,7 +8,7 @@ import java.net.Socket;
 public class TestClient {
 
     private final int portNumber;
-    InputOutput io = new InputOutput();
+    TestClientInputOutput io = new TestClientInputOutput();
     Socket socket;
 
     public TestClient(int portNumber) {

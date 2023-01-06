@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-public class InputOutput {
+public class TestClientInputOutput {
 
     public BufferedReader getSocketInputStream(Socket socket) throws IOException {
             return new BufferedReader(
