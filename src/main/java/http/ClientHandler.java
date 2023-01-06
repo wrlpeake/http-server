@@ -20,7 +20,7 @@ public class ClientHandler {
             InputStream in = client.getInputStream();
             ByteArrayOutputStream out = new ByteArrayOutputStream();
             String request = requestHandler.getRequest(in);
-            String requestParameters = requestHandler.getRequestParameters(request);
+            System.out.println(request);
 
             out.write(responseHandler.getPageNotFoundResponse());
 

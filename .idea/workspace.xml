@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Refactoring 404 response and updating test to use web server and test client borrowed from echo server">
+    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Fixed port 5000 issue due to Mac Airplay receiver">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/RequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/RequestHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +80,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671553769946</updated>
-      <workItem from="1671553771364" duration="31045000" />
+      <workItem from="1671553771364" duration="36266000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1671554143949</created>
@@ -107,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672923006176</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fixed port 5000 issue due to Mac Airplay receiver">
+      <created>1672927260521</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1672927260521</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +139,7 @@
     <MESSAGE value="Add README.md" />
     <MESSAGE value="Page Not Found returns 404" />
     <MESSAGE value="Refactoring 404 response and updating test to use web server and test client borrowed from echo server" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring 404 response and updating test to use web server and test client borrowed from echo server" />
+    <MESSAGE value="Fixed port 5000 issue due to Mac Airplay receiver" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed port 5000 issue due to Mac Airplay receiver" />
   </component>
 </project>
