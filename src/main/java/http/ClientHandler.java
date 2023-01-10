@@ -19,12 +19,16 @@ public class ClientHandler {
         try {
             InputStream in = client.getInputStream();
             ByteArrayOutputStream out = new ByteArrayOutputStream();
+
             String request = requestHandler.getRequest(in);
-            System.out.println(request);
+            String parameters = requestHandler.getRequestParameters(request);
+            String method = requestHandler.getMethod(parameters);
+            String path = requestHandler.getPath(parameters);
 
-            out.write(responseHandler.getPageNotFoundResponse());
-
+            String responseString = responseHandler.buildResponse(method, path);
+            out.write(responseHandler.response(responseString));
             out.writeTo(client.getOutputStream());
+
             client.close();
         } catch (IOException e) {
             throw new RuntimeException(e);

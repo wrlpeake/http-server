@@ -16,4 +16,12 @@ public class RequestHandler {
     public String getRequestParameters(String request) {
         return request.split("\r\n")[0];
     }
+
+    public String getMethod(String parameters) {
+        return parameters.split(" ")[0];
+    }
+
+    public String getPath(String parameters) {
+        return parameters.split(" ")[1];
+    }
 }

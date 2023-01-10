@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Changed `InputOutput` to `TestClientInputOutput` to make it clear what this is for.">
-      <change afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/http_server_spec" afterDir="false" />
+    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Added Git submodule to include `http_server_spec` feature tests repo in the project. Updated README with instructions on how to run the test suite.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/http/Routes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/http/RequestHandlerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/RequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/RequestHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/ResponseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/ResponseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/TestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/TestClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/http/WebServerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/http/WebServerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +84,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671553769946</updated>
-      <workItem from="1671553771364" duration="45062000" />
+      <workItem from="1671553771364" duration="56304000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1671554143949</created>
@@ -131,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673004853544</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added Git submodule to include `http_server_spec` feature tests repo in the project. Updated README with instructions on how to run the test suite.">
+      <created>1673267173607</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1673267173607</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +167,7 @@
     <MESSAGE value="Fixed port 5000 issue due to Mac Airplay receiver" />
     <MESSAGE value="Adds application details to `build.gradle` and logs HTTP requests to command line in preparation for parsing." />
     <MESSAGE value="Changed `InputOutput` to `TestClientInputOutput` to make it clear what this is for." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed `InputOutput` to `TestClientInputOutput` to make it clear what this is for." />
+    <MESSAGE value="Added Git submodule to include `http_server_spec` feature tests repo in the project. Updated README with instructions on how to run the test suite." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Git submodule to include `http_server_spec` feature tests repo in the project. Updated README with instructions on how to run the test suite." />
   </component>
 </project>
