@@ -25,8 +25,8 @@ public class ClientHandler {
             String method = requestHandler.getMethod(parameters);
             String path = requestHandler.getPath(parameters);
 
-            String responseString = responseHandler.buildResponse(method, path);
-            out.write(responseHandler.response(responseString));
+            String statusCode = responseHandler.buildResponse(method, path);
+            out.write(responseHandler.response(statusCode));
             out.writeTo(client.getOutputStream());
 
             client.close();
