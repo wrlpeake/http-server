@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Add README.md">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/http/RequestHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/http/ResponseHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/http/WebServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/http/WebServerTest.java" afterDir="false" />
+    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Changed `InputOutput` to `TestClientInputOutput` to make it clear what this is for.">
+      <change afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/http_server_spec" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/http/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/http/MainTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +32,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2JBa7y08MRxrGg1oOhlFTmi1NZR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -69,6 +68,9 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="http" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="http" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -78,7 +80,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671553769946</updated>
-      <workItem from="1671553771364" duration="12590000" />
+      <workItem from="1671553771364" duration="45062000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1671554143949</created>
@@ -94,7 +96,42 @@
       <option name="project" value="LOCAL" />
       <updated>1671554789577</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Page Not Found returns 404">
+      <created>1672841283883</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1672841283883</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Refactoring 404 response and updating test to use web server and test client borrowed from echo server">
+      <created>1672923006176</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1672923006176</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Fixed port 5000 issue due to Mac Airplay receiver">
+      <created>1672927260521</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1672927260521</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Adds application details to `build.gradle` and logs HTTP requests to command line in preparation for parsing.">
+      <created>1673004039979</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1673004039979</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Changed `InputOutput` to `TestClientInputOutput` to make it clear what this is for.">
+      <created>1673004853544</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1673004853544</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,6 +151,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit." />
     <MESSAGE value="Add README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add README.md" />
+    <MESSAGE value="Page Not Found returns 404" />
+    <MESSAGE value="Refactoring 404 response and updating test to use web server and test client borrowed from echo server" />
+    <MESSAGE value="Fixed port 5000 issue due to Mac Airplay receiver" />
+    <MESSAGE value="Adds application details to `build.gradle` and logs HTTP requests to command line in preparation for parsing." />
+    <MESSAGE value="Changed `InputOutput` to `TestClientInputOutput` to make it clear what this is for." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed `InputOutput` to `TestClientInputOutput` to make it clear what this is for." />
   </component>
 </project>
