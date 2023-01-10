@@ -7,7 +7,8 @@ public class ResponseHandler {
 
     public String buildResponse(String method, String path) {
         if (Routes.getRoute(method, path)) {
-            return "HTTP/1.1 200 OK\r\n\r\n";
+            String body = Routes.getBody(method, path);
+            return "HTTP/1.1 200 OK\r\n\r\n" + body;
         }
         return "HTTP/1.1 404 Not Found\r\n\r\n";
     }
