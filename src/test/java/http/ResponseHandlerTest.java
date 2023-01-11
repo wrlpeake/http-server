@@ -62,4 +62,32 @@ public class ResponseHandlerTest {
         assertEquals(status200ResponseWithBody, responseHandler.buildResponse(method, path));
     }
 
+    @Test
+    public void simpleHeadRequestToSimpleGet() throws IOException {
+        String requestParameters = "HEAD /simple_get HTTP/1.1\r\n";
+        ByteArrayInputStream input = new ByteArrayInputStream(requestParameters.getBytes());
+
+        String request = requestHandler.getRequest(input);
+        String parameters = requestHandler.getRequestParameters(request);
+        String method = requestHandler.getMethod(parameters);
+        String path = requestHandler.getPath(parameters);
+
+        String status200Response = "HTTP/1.1 200 OK\r\n\r\n";
+        assertEquals(status200Response, responseHandler.buildResponse(method, path));
+    }
+
+    @Test
+    public void simpleHeadRequestWithNoBody() throws IOException {
+        String requestParameters = "HEAD /head_request HTTP/1.1\r\n";
+        ByteArrayInputStream input = new ByteArrayInputStream(requestParameters.getBytes());
+
+        String request = requestHandler.getRequest(input);
+        String parameters = requestHandler.getRequestParameters(request);
+        String method = requestHandler.getMethod(parameters);
+        String path = requestHandler.getPath(parameters);
+
+        String status200Response = "HTTP/1.1 200 OK\r\n\r\n";
+        assertEquals(status200Response, responseHandler.buildResponse(method, path));
+    }
+
 }

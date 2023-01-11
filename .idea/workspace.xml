@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Rename WebServerTest to ResponseHandlerTest to better reflect its use.">
+    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="GET request to /simple_get_with_body returns a 200 with the body &quot;Hello world&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/http/ResponseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/ResponseHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/http/Routes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/Routes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/http/ResponseHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/http/ResponseHandlerTest.java" afterDir="false" />
     </list>
@@ -152,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673361613598</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="GET request to /simple_get_with_body returns a 200 with the body &quot;Hello world&quot;">
+      <created>1673363955583</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1673363955583</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,6 +186,7 @@
     <MESSAGE value="Added Git submodule to include `http_server_spec` feature tests repo in the project. Updated README with instructions on how to run the test suite." />
     <MESSAGE value="Rename `responseString` to `statusCode` to better reflect its use." />
     <MESSAGE value="Rename WebServerTest to ResponseHandlerTest to better reflect its use." />
-    <option name="LAST_COMMIT_MESSAGE" value="Rename WebServerTest to ResponseHandlerTest to better reflect its use." />
+    <MESSAGE value="GET request to /simple_get_with_body returns a 200 with the body &quot;Hello world&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="GET request to /simple_get_with_body returns a 200 with the body &quot;Hello world&quot;" />
   </component>
 </project>
