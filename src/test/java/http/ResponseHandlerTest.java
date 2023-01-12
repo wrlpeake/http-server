@@ -44,7 +44,7 @@ public class ResponseHandlerTest {
         String method = requestHandler.getMethod(parameters);
         String path = requestHandler.getPath(parameters);
 
-        String status200Response = "HTTP/1.1 200 OK\r\n\r\n";
+        String status200Response = "HTTP/1.1 200 OK\r\nAllow: GET, HEAD\r\n\r\n";
         assertEquals(status200Response, responseHandler.buildResponse(method, path));
     }
 
@@ -58,7 +58,7 @@ public class ResponseHandlerTest {
         String method = requestHandler.getMethod(parameters);
         String path = requestHandler.getPath(parameters);
 
-        String status200ResponseWithBody = "HTTP/1.1 200 OK\r\n\r\nHello world";
+        String status200ResponseWithBody = "HTTP/1.1 200 OK\r\nAllow: GET, HEAD\r\n\r\nHello world";
         assertEquals(status200ResponseWithBody, responseHandler.buildResponse(method, path));
     }
 
@@ -72,7 +72,7 @@ public class ResponseHandlerTest {
         String method = requestHandler.getMethod(parameters);
         String path = requestHandler.getPath(parameters);
 
-        String status200Response = "HTTP/1.1 200 OK\r\n\r\n";
+        String status200Response = "HTTP/1.1 200 OK\r\nAllow: GET, HEAD\r\n\r\n";
         assertEquals(status200Response, responseHandler.buildResponse(method, path));
     }
 
@@ -86,7 +86,7 @@ public class ResponseHandlerTest {
         String method = requestHandler.getMethod(parameters);
         String path = requestHandler.getPath(parameters);
 
-        String status200Response = "HTTP/1.1 200 OK\r\n\r\n";
+        String status200Response = "HTTP/1.1 200 OK\r\nAllow: GET, HEAD\r\n\r\n";
         assertEquals(status200Response, responseHandler.buildResponse(method, path));
     }
 
