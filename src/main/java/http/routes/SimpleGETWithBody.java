@@ -14,7 +14,7 @@ public class SimpleGETWithBody {
     public SimpleGETWithBody() {
         CRLF = "\r\n";
         headers = Arrays.asList("GET", "HEAD");
-        headersResponse = "Allow: GET, HEAD";
+        headersResponse = String.format("Allow: %s, %s", headers.get(0), headers.get(1));
         body = "Hello world";
     }
 

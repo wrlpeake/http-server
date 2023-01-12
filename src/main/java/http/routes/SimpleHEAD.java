@@ -13,7 +13,7 @@ public class SimpleHEAD {
     public SimpleHEAD() {
         CRLF = "\r\n";
         headers = Arrays.asList("HEAD", "OPTIONS");
-        headersResponse = "Allow: HEAD, OPTIONS";
+        headersResponse = String.format("Allow: %s, %s", headers.get(0), headers.get(1));
     }
 
     public String response(String method) {

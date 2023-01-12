@@ -14,7 +14,7 @@ public class Redirect {
     public Redirect() {
         CRLF = "\r\n";
         headers = Arrays.asList("GET", "HEAD");
-        headersResponse = "Allow: GET, HEAD";
+        headersResponse = String.format("Allow: %s, %s", headers.get(0), headers.get(1));
         redirectLocation = "Location: http://127.0.0.1:5000/simple_get";
     }
 
