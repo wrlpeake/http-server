@@ -118,5 +118,19 @@ public class ResponseHandlerTest {
         assertEquals(status200Response, responseHandler.buildResponse(method, path));
 
     }
+    @Test
+    public void methodOptionsTest() throws IOException {
+        String requestParameters = "OPTIONS /method_options HTTP/1.1\r\n";
+        ByteArrayInputStream input = new ByteArrayInputStream(requestParameters.getBytes());
+
+        String request = requestHandler.getRequest(input);
+        String parameters = requestHandler.getRequestParameters(request);
+        String method = requestHandler.getMethod(parameters);
+        String path = requestHandler.getPath(parameters);
+
+        String status200Response = "HTTP/1.1 200 OK\r\nAllow: GET, HEAD, OPTIONS\r\n\r\n";
+        assertEquals(status200Response, responseHandler.buildResponse(method, path));
+
+    }
 
 }

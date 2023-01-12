@@ -1,9 +1,6 @@
 package http;
 
-import http.routes.Redirect;
-import http.routes.SimpleGET;
-import http.routes.SimpleGETWithBody;
-import http.routes.SimpleHEAD;
+import http.routes.*;
 
 public class Router {
 
@@ -21,6 +18,9 @@ public class Router {
             case "/redirect":
                 Redirect redirect = new Redirect();
                 return redirect.response(method);
+            case "/method_options":
+                MethodOptions methodOptions = new MethodOptions();
+                return methodOptions.response(method);
         }
         return null;
     }

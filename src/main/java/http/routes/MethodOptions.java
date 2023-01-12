@@ -5,16 +5,16 @@ import http.Codes;
 import java.util.Arrays;
 import java.util.List;
 
-public class SimpleGET {
+public class MethodOptions {
     final String CRLF;
     final List<String> headers;
     final String headersResponse;
     final String body;
 
-    public SimpleGET() {
+    public MethodOptions() {
         CRLF = "\r\n";
-        headers = Arrays.asList("GET", "HEAD");
-        headersResponse = String.format("Allow: %s, %s", headers.get(0), headers.get(1));
+        headers = Arrays.asList("GET", "HEAD", "OPTIONS");
+        headersResponse = String.format("Allow: %s, %s, %s", headers.get(0), headers.get(1), headers.get(2));
         body = "";
     }
 
