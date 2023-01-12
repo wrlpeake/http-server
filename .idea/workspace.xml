@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Added Simple HEAD routes and responses">
-      <change afterPath="$PROJECT_DIR$/src/main/java/http/routes/SimpleGET.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/http/routes/SimpleGETWithBody.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/http/routes/simpleHEAD.java" afterDir="false" />
+    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Extracted codes into an `enum` to remove duplication. Adds 405 method not allowed responses to current routes.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/http/Codes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/http/routes/Redirect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/http/ResponseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/ResponseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/http/Routes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/Router.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/Router.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/routes/SimpleGET.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/routes/SimpleGET.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/routes/SimpleGETWithBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/routes/SimpleGETWithBody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/routes/SimpleHEAD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/routes/SimpleHEAD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/http/ResponseHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/http/ResponseHandlerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -170,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673449171511</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Refactoring routes by extracting them into their own Routes package and classes">
+      <created>1673524976419</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1673524976419</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +209,9 @@
     <MESSAGE value="Rename WebServerTest to ResponseHandlerTest to better reflect its use." />
     <MESSAGE value="GET request to /simple_get_with_body returns a 200 with the body &quot;Hello world&quot;" />
     <MESSAGE value="Added Simple HEAD routes and responses" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Simple HEAD routes and responses" />
+    <MESSAGE value="Refactoring routes by extracting them into their own Routes package and classes" />
+    <MESSAGE value="Extracted codes into an `enum` to remove duplication." />
+    <MESSAGE value="Extracted codes into an `enum` to remove duplication. Adds 405 method not allowed responses to current routes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Extracted codes into an `enum` to remove duplication. Adds 405 method not allowed responses to current routes." />
   </component>
 </project>

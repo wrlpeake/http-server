@@ -1,31 +1,25 @@
 package http.routes;
 
+import http.Codes;
+
 import java.util.Arrays;
 import java.util.List;
 
 public class SimpleHEAD {
     final String CRLF;
-    final String HTTP_VERSION;
-    final String statusCode;
     final List<String> headers;
     final String headersResponse;
-    final String body;
-    final String requestMethod;
 
-    public SimpleHEAD(String method) {
+    public SimpleHEAD() {
         CRLF = "\r\n";
-        HTTP_VERSION = "HTTP/1.1 ";
-        statusCode = "200 OK";
-        headers = Arrays.asList("GET", "HEAD");
-        headersResponse = "Allow: GET, HEAD";
-        body = "";
-        requestMethod = method;
+        headers = Arrays.asList("HEAD", "OPTIONS");
+        headersResponse = "Allow: HEAD, OPTIONS";
     }
 
     public String response(String method) {
         if (headers.contains(method)) {
-            return HTTP_VERSION + statusCode + CRLF + headersResponse + CRLF + CRLF + body;
+            return Codes.HTTP_VERSION.getCode() + Codes._200.getCode() + CRLF + headersResponse + CRLF + CRLF;
         }
-        return "HTTP/1.1 404 Not Found\r\n\r\n";
+        return Codes.HTTP_VERSION.getCode() + Codes._405.getCode() + CRLF + headersResponse + CRLF + CRLF;
     }
 }

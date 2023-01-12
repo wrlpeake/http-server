@@ -9,7 +9,7 @@ public class ResponseHandler {
         if (Router.getResponse(method, path) != null) {
             return Router.getResponse(method, path);
         }
-        return "HTTP/1.1 404 Not Found\r\n\r\n";
+        return Codes.HTTP_VERSION.getCode() + Codes._404.getCode() + "\r\n\r\n";
     }
 
     public byte[] response(String responseString) {
