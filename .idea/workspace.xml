@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Changes `headerResponse` format in Routes">
-      <change afterPath="$PROJECT_DIR$/src/main/java/http/routes/MethodOptions.java" afterDir="false" />
+    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Adds new route &quot;/method_options&quot;">
+      <change afterPath="$PROJECT_DIR$/src/main/java/http/routes/EchoBody.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/http/routes/MethodOptions2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/RequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/RequestHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/ResponseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/ResponseHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/http/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/Router.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/routes/MethodOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/routes/MethodOptions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/http/routes/SimpleGET.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/routes/SimpleGET.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/http/ResponseHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/http/ResponseHandlerTest.java" afterDir="false" />
     </list>
@@ -190,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673532431235</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Adds new route &quot;/method_options&quot;">
+      <created>1673534559227</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1673534559227</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,6 +237,7 @@
     <MESSAGE value="Extracted codes into an `enum` to remove duplication. Adds 405 method not allowed responses to current routes." />
     <MESSAGE value="Extracted codes into an `enum` to remove duplication. Adds 405 method not allowed responses to current routes and new `/redirect` route." />
     <MESSAGE value="Changes `headerResponse` format in Routes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes `headerResponse` format in Routes" />
+    <MESSAGE value="Adds new route &quot;/method_options&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adds new route &quot;/method_options&quot;" />
   </component>
 </project>

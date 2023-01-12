@@ -24,4 +24,13 @@ public class RequestHandler {
     public String getPath(String parameters) {
         return parameters.split(" ")[1];
     }
+    public String getBody(String request) {
+        StringBuilder body = new StringBuilder();
+        String[] input;
+        if (request.contains("Content-Length")) {
+            input = request.split("\r\n\r\n");
+            body.append(input[input.length - 1].trim());
+        }
+        return body.toString();
+    }
 }

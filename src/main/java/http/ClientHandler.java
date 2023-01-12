@@ -24,9 +24,10 @@ public class ClientHandler {
             String parameters = requestHandler.getRequestParameters(request);
             String method = requestHandler.getMethod(parameters);
             String path = requestHandler.getPath(parameters);
+            String body = requestHandler.getBody(request);
 
-            String statusCode = responseHandler.buildResponse(method, path);
-            out.write(responseHandler.response(statusCode));
+            String response = responseHandler.buildResponse(method, path, body);
+            out.write(responseHandler.response(response));
             out.writeTo(client.getOutputStream());
 
             client.close();
@@ -35,3 +36,4 @@ public class ClientHandler {
         }
     }
 }
+
