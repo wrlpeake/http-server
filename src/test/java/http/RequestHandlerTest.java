@@ -39,4 +39,11 @@ public class RequestHandlerTest {
         String path = "/simple_get";
         assertEquals(path, requestHandler.getPath(parameters));
     }
+
+    @Test
+    public void getBodyTest() {
+        String request = "GET /echo_body HTTP/1.1\r\nContent-Type: text/plain\r\nContent-Length: 11\r\n\r\nHello world";
+        String expectedBody = "Hello world";
+        assertEquals(expectedBody, requestHandler.getBody(request));
+    }
 }
