@@ -1,10 +1,11 @@
 package http.routes;
 
 import http.Codes;
+import http.Route;
 
 import java.util.List;
 
-public class EchoBody {
+public class EchoBody implements Route {
     final String CRLF;
     final List<String> headers;
     final String headersResponse;
@@ -15,7 +16,7 @@ public class EchoBody {
         headersResponse = String.format("Allow: %s", headers.get(0));
     }
 
-
+    @Override
     public String response(String method, String body) {
         if (headers.contains(method)) {
             return Codes.HTTP_VERSION.getCode() + Codes._200.getCode() + CRLF + headersResponse + CRLF + CRLF + body;

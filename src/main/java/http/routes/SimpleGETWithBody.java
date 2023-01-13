@@ -1,14 +1,16 @@
 package http.routes;
 
 import http.Codes;
+import http.Route;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class SimpleGETWithBody {
+public class SimpleGETWithBody implements Route {
     final String CRLF;
     final List<String> headers;
     final String headersResponse;
+
     final String body;
 
     public SimpleGETWithBody() {
@@ -18,8 +20,8 @@ public class SimpleGETWithBody {
         body = "Hello world";
     }
 
-
-    public String response(String method) {
+    @Override
+    public String response(String method, String requestBody) {
         if (headers.contains(method)) {
             return Codes.HTTP_VERSION.getCode() + Codes._200.getCode() + CRLF + headersResponse + CRLF + CRLF + body;
         }
