@@ -5,14 +5,9 @@ import java.net.Socket;
 
 public class ClientHandler {
     private final Socket client;
-    private final RequestHandler requestHandler;
-
-    private final ResponseHandler responseHandler;
 
     public ClientHandler(Socket socket) {
         client = socket;
-        requestHandler = new RequestHandler();
-        responseHandler = new ResponseHandler();
     }
 
     public void start() {
@@ -20,14 +15,14 @@ public class ClientHandler {
             InputStream in = client.getInputStream();
             ByteArrayOutputStream out = new ByteArrayOutputStream();
 
-            String request = requestHandler.getRequest(in);
-            String parameters = requestHandler.getRequestParameters(request);
-            String method = requestHandler.getMethod(parameters);
-            String path = requestHandler.getPath(parameters);
-            String body = requestHandler.getBody(request);
+            String request = RequestHandler.getRequest(in);
+            String parameters = RequestHandler.getRequestParameters(request);
+            String method = RequestHandler.getMethod(parameters);
+            String path = RequestHandler.getPath(parameters);
+            String body = RequestHandler.getBody(request);
 
-            String response = responseHandler.buildResponse(method, path, body);
-            out.write(responseHandler.response(response));
+            String response = ResponseHandler.buildResponse(method, path, body);
+            out.write(ResponseHandler.response(response));
             out.writeTo(client.getOutputStream());
 
             client.close();

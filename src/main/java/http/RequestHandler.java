@@ -5,7 +5,7 @@ import java.io.InputStream;
 
 public class RequestHandler {
 
-    public String getRequest(InputStream in) throws IOException {
+    public static String getRequest(InputStream in) throws IOException {
         int readInputStream;
         StringBuilder request = new StringBuilder();
         while ((readInputStream = in.read()) != -1 && in.available() != 0) request.append((char) readInputStream);
@@ -13,18 +13,18 @@ public class RequestHandler {
         return request.toString();
     }
 
-    public String getRequestParameters(String request) {
+    public static String getRequestParameters(String request) {
         return request.split("\r\n")[0];
     }
 
-    public String getMethod(String parameters) {
+    public static String getMethod(String parameters) {
         return parameters.split(" ")[0];
     }
 
-    public String getPath(String parameters) {
+    public static String getPath(String parameters) {
         return parameters.split(" ")[1];
     }
-    public String getBody(String request) {
+    public static String getBody(String request) {
         StringBuilder body = new StringBuilder();
         String[] input;
         if (request.contains("Content-Length")) {
