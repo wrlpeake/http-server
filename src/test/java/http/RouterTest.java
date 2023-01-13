@@ -1,0 +1,103 @@
+package http;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+
+public class RouterTest {
+    Router router = new Router();
+    String method;
+    String path;
+    String body;
+    String expectedResponse;
+
+    @Test
+    public void simpleGetRouteTest() {
+        method = "GET";
+        path = "/simple_get";
+        body = "";
+
+        expectedResponse = "HTTP/1.1 200 OK\r\nAllow: GET, HEAD\r\n\r\n";
+        assertEquals(expectedResponse, router.getResponse(method, path, body));
+    }
+
+    @Test
+    public void routeNotFoundTest() {
+        method = "POST";
+        path = "/does_not_exist";
+        body = "foobar";
+
+        assertNull(router.getResponse(method, path, body));
+    }
+
+    @Test
+    public void routeExistsButMethodNotAllowed405Test() {
+        method = "HEAD";
+        path = "/echo_body";
+        body = "foobar";
+
+        expectedResponse = "HTTP/1.1 405 Method Not Allowed\r\nAllow: POST\r\n\r\n";
+        assertEquals(expectedResponse, router.getResponse(method, path, body));
+    }
+
+    @Test
+    public void simpleGetBodyRouteTest() {
+        method = "GET";
+        path = "/simple_get_with_body";
+        body = "";
+
+        expectedResponse = "HTTP/1.1 200 OK\r\nAllow: GET, HEAD\r\n\r\nHello world";
+        assertEquals(expectedResponse, router.getResponse(method, path, body));
+    }
+
+    @Test
+    public void headRequestRouteTest() {
+        method = "HEAD";
+        path = "/head_request";
+        body = "";
+
+        expectedResponse = "HTTP/1.1 200 OK\r\nAllow: HEAD, OPTIONS\r\n\r\n";
+        assertEquals(expectedResponse, router.getResponse(method, path, body));
+    }
+
+    @Test
+    public void redirectRouteTest() {
+        method = "GET";
+        path = "/redirect";
+        body = "";
+
+        expectedResponse = "HTTP/1.1 301 Redirect\r\nLocation: http://127.0.0.1:5000/simple_get\r\nAllow: GET, HEAD\r\n\r\n";
+        assertEquals(expectedResponse, router.getResponse(method, path, body));
+    }
+
+    @Test
+    public void methodOptionsRouteTest() {
+        method = "OPTIONS";
+        path = "/method_options";
+        body = "";
+
+        expectedResponse = "HTTP/1.1 200 OK\r\nAllow: GET, HEAD, OPTIONS\r\n\r\n";
+        assertEquals(expectedResponse, router.getResponse(method, path, body));
+    }
+
+    @Test
+    public void methodOptions2RouteTest() {
+        method = "OPTIONS";
+        path = "/method_options2";
+        body = "";
+
+        expectedResponse = "HTTP/1.1 200 OK\r\nAllow: GET, HEAD, OPTIONS, PUT, POST\r\n\r\n";
+        assertEquals(expectedResponse, router.getResponse(method, path, body));
+    }
+
+    @Test
+    public void echoBodyRouteTest() {
+        method = "POST";
+        path = "/echo_body";
+        body = "Once upon a time...";
+
+        expectedResponse = "HTTP/1.1 200 OK\r\nAllow: POST\r\n\r\nOnce upon a time...";
+        assertEquals(expectedResponse, router.getResponse(method, path, body));
+    }
+}

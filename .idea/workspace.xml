@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Amends `RequestHandler` &amp; `ResponseHandler` to static class and wraps repetitive test methods into a `buildResponseHelper()`">
-      <change afterPath="$PROJECT_DIR$/src/main/java/http/Route.java" afterDir="false" />
+    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Adds a `Route` interface which all routes now implement.">
+      <change afterPath="$PROJECT_DIR$/src/test/java/http/RouterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/http/routes/SimpleGETWithBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/routes/SimpleGETWithBody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/ResponseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/ResponseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/Router.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/http/RequestHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/http/RequestHandlerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -217,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673612092933</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Adds a `Route` interface which all routes now implement.">
+      <created>1673613732322</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1673613732322</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,6 +265,7 @@
     <MESSAGE value="Adds new routes &quot;/method_options2&quot; and &quot;/echo_body&quot;. Completes 01_getting_started acceptance tests" />
     <MESSAGE value="Adds `getBodyTest()` for the `RequestHandler` class" />
     <MESSAGE value="Amends `RequestHandler` &amp; `ResponseHandler` to static class and wraps repetitive test methods into a `buildResponseHelper()`" />
-    <option name="LAST_COMMIT_MESSAGE" value="Amends `RequestHandler` &amp; `ResponseHandler` to static class and wraps repetitive test methods into a `buildResponseHelper()`" />
+    <MESSAGE value="Adds a `Route` interface which all routes now implement." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adds a `Route` interface which all routes now implement." />
   </component>
 </project>

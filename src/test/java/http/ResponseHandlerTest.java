@@ -27,8 +27,8 @@ public class ResponseHandlerTest {
 
         String response = ResponseHandlerTest.buildResponseHelper(input);
 
-        String pageNotFoundResponse = "HTTP/1.1 404 Not Found\r\n\r\n";
-        assertEquals(pageNotFoundResponse, response);
+        String status404Response = "HTTP/1.1 404 Not Found\r\n\r\n";
+        assertEquals(status404Response, response);
     }
 
     @Test
@@ -82,8 +82,8 @@ public class ResponseHandlerTest {
 
         String response = ResponseHandlerTest.buildResponseHelper(input);
 
-        String status200Response = "HTTP/1.1 405 Method Not Allowed\r\nAllow: HEAD, OPTIONS\r\n\r\n";
-        assertEquals(status200Response, response);
+        String status405Response = "HTTP/1.1 405 Method Not Allowed\r\nAllow: HEAD, OPTIONS\r\n\r\n";
+        assertEquals(status405Response, response);
     }
 
     @Test
@@ -93,8 +93,8 @@ public class ResponseHandlerTest {
 
         String response = ResponseHandlerTest.buildResponseHelper(input);
 
-        String status200Response = "HTTP/1.1 301 Redirect\r\nLocation: http://127.0.0.1:5000/simple_get\r\nAllow: GET, HEAD\r\n\r\n";
-        assertEquals(status200Response, response);
+        String status301Response = "HTTP/1.1 301 Redirect\r\nLocation: http://127.0.0.1:5000/simple_get\r\nAllow: GET, HEAD\r\n\r\n";
+        assertEquals(status301Response, response);
 
     }
     @Test
