@@ -20,7 +20,7 @@ public class RouterTest {
 
         expectedResponse = "HTTP/1.1 200 OK\r\nAllow: GET, HEAD\r\n\r\n";
         Response response = router.getResponse(method, path, body);
-        assertEquals(expectedResponse, response.getResponse());
+        assertEquals(expectedResponse, response.responseString());
     }
 
     @Test
@@ -40,7 +40,7 @@ public class RouterTest {
 
         expectedResponse = "HTTP/1.1 405 Method Not Allowed\r\nAllow: POST\r\n\r\n";
         Response response = router.getResponse(method, path, body);
-        assertEquals(expectedResponse, response.getResponse());
+        assertEquals(expectedResponse, response.responseString());
     }
 
     @Test
@@ -51,7 +51,7 @@ public class RouterTest {
 
         expectedResponse = "HTTP/1.1 200 OK\r\nAllow: GET, HEAD\r\n\r\nHello world";
         Response response = router.getResponse(method, path, body);
-        assertEquals(expectedResponse, response.getResponse());
+        assertEquals(expectedResponse, response.responseString());
     }
 
     @Test
@@ -62,7 +62,7 @@ public class RouterTest {
 
         expectedResponse = "HTTP/1.1 200 OK\r\nAllow: HEAD, OPTIONS\r\n\r\n";
         Response response = router.getResponse(method, path, body);
-        assertEquals(expectedResponse, response.getResponse());
+        assertEquals(expectedResponse, response.responseString());
     }
 
     @Test
@@ -73,7 +73,7 @@ public class RouterTest {
 
         expectedResponse = "HTTP/1.1 301 Redirect\r\nLocation: http://127.0.0.1:5000/simple_get\r\nAllow: GET, HEAD\r\n\r\n";
         Response response = router.getResponse(method, path, body);
-        assertEquals(expectedResponse, response.getResponse());
+        assertEquals(expectedResponse, response.responseString());
     }
 
     @Test
@@ -84,7 +84,7 @@ public class RouterTest {
 
         expectedResponse = "HTTP/1.1 200 OK\r\nAllow: GET, HEAD, OPTIONS\r\n\r\n";
         Response response = router.getResponse(method, path, body);
-        assertEquals(expectedResponse, response.getResponse());
+        assertEquals(expectedResponse, response.responseString());
     }
 
     @Test
@@ -95,7 +95,7 @@ public class RouterTest {
 
         expectedResponse = "HTTP/1.1 200 OK\r\nAllow: GET, HEAD, OPTIONS, PUT, POST\r\n\r\n";
         Response response = router.getResponse(method, path, body);
-        assertEquals(expectedResponse, response.getResponse());
+        assertEquals(expectedResponse, response.responseString());
     }
 
     @Test
@@ -106,6 +106,6 @@ public class RouterTest {
 
         expectedResponse = "HTTP/1.1 200 OK\r\nAllow: POST\r\n\r\nOnce upon a time...";
         Response response = router.getResponse(method, path, body);
-        assertEquals(expectedResponse, response.getResponse());
+        assertEquals(expectedResponse, response.responseString());
     }
 }

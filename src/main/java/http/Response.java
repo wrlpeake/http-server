@@ -12,7 +12,7 @@ public class Response {
         this.body = body;
     }
 
-    public String getResponse() {
+    public String responseString() {
         return (statusCode + header + body);
     }
 }

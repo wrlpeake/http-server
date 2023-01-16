@@ -7,6 +7,7 @@ public class ClientHandler {
     private final Socket client;
     private final ResponseHandler responseHandler;
 
+
     public ClientHandler(Socket socket) {
         client = socket;
         Router router = new Router();
@@ -18,14 +19,11 @@ public class ClientHandler {
             InputStream in = client.getInputStream();
             ByteArrayOutputStream out = new ByteArrayOutputStream();
 
-            String request = RequestHandler.getRequest(in);
-            String parameters = RequestHandler.getRequestParameters(request);
-            String method = RequestHandler.getMethod(parameters);
-            String path = RequestHandler.getPath(parameters);
-            String body = RequestHandler.getBody(request);
+            Request request = new Request(RequestHandler.getRequest(in));
+            request.parseRequest();
 
-            Response response = responseHandler.getResponse(method, path, body);
-            out.write(response.getResponse().getBytes());
+            Response response = responseHandler.getResponse(request.getMethod(), request.getPath(), request.getBody());
+            out.write(response.responseString().getBytes());
             out.writeTo(client.getOutputStream());
 
             client.close();

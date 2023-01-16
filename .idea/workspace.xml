@@ -4,22 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Lifts the `Router` initialisation to the `ClientHandler` and injects it to the `ResponseHandler`. Also renames `Web Server` to `HTTPServer`">
-      <change afterPath="$PROJECT_DIR$/src/main/java/http/Response.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/http/ResponseBuilder.java" afterDir="false" />
+    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Large refactor to implement a `ResponseBuilder`. The `ResponseBuilder` uses the builder pattern to return an object of the `Response` class.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/http/Request.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/http/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/http/Codes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/HTTPStatusCodes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/http/ResponseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/ResponseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/http/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/Route.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/http/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/Router.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/http/routes/EchoBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/routes/EchoBody.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/http/routes/MethodOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/routes/MethodOptions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/http/routes/MethodOptions2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/routes/MethodOptions2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/http/routes/Redirect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/routes/Redirect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/http/routes/SimpleGET.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/routes/SimpleGET.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/http/routes/SimpleGETWithBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/routes/SimpleGETWithBody.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/http/routes/SimpleHEAD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/routes/SimpleHEAD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/Response.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/http/ResponseHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/http/ResponseHandlerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/http/RouterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/http/RouterTest.java" afterDir="false" />
     </list>
@@ -259,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673868317648</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Large refactor to implement a `ResponseBuilder`. The `ResponseBuilder` uses the builder pattern to return an object of the `Response` class.">
+      <created>1673883705380</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1673883705380</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,7 +273,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add README.md" />
     <MESSAGE value="Page Not Found returns 404" />
     <MESSAGE value="Refactoring 404 response and updating test to use web server and test client borrowed from echo server" />
     <MESSAGE value="Fixed port 5000 issue due to Mac Airplay receiver" />
@@ -302,6 +297,7 @@
     <MESSAGE value="Tweaked test cases to improve quality." />
     <MESSAGE value="Lifts the `Router` initialisation to the `ClientHandler` and injects it to the `ResponseHandler`" />
     <MESSAGE value="Lifts the `Router` initialisation to the `ClientHandler` and injects it to the `ResponseHandler`. Also renames `Web Server` to `HTTPServer`" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lifts the `Router` initialisation to the `ClientHandler` and injects it to the `ResponseHandler`. Also renames `Web Server` to `HTTPServer`" />
+    <MESSAGE value="Large refactor to implement a `ResponseBuilder`. The `ResponseBuilder` uses the builder pattern to return an object of the `Response` class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Large refactor to implement a `ResponseBuilder`. The `ResponseBuilder` uses the builder pattern to return an object of the `Response` class." />
   </component>
 </project>

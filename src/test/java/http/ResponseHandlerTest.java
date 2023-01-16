@@ -25,7 +25,7 @@ public class ResponseHandlerTest {
         String body = RequestHandler.getBody(request);
 
         Response response = responseHandler.getResponse(method, path, body);
-        return response.getResponse();
+        return response.responseString();
     }
 
     @Test
