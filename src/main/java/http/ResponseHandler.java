@@ -7,14 +7,16 @@ public class ResponseHandler {
         this.router = router;
     }
 
-    public String buildResponse(String method, String path, String body) {
+    public Response getResponse(String method, String path, String body) {
         if (this.router.getResponse(method, path, body) != null) {
             return this.router.getResponse(method, path, body);
         }
-        return Codes.HTTP_VERSION.getCode() + Codes._404.getCode() + "\r\n\r\n";
+        return new ResponseBuilder()
+                .withStatusCode(HTTPStatusCodes._404.getCode())
+                .withHeader("")
+                .withBody("")
+                .build();
     }
 
-    public byte[] response(String responseString) {
-        return responseString.getBytes();
-    }
 }
+

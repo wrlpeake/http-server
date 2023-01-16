@@ -1,6 +1,8 @@
 package http.routes;
 
-import http.Codes;
+import http.HTTPStatusCodes;
+import http.Response;
+import http.ResponseBuilder;
 import http.Route;
 
 import java.util.List;
@@ -17,10 +19,18 @@ public class EchoBody implements Route {
     }
 
     @Override
-    public String response(String method, String body) {
+    public Response response(String method, String body) {
         if (headers.contains(method)) {
-            return Codes.HTTP_VERSION.getCode() + Codes._200.getCode() + CRLF + headersResponse + CRLF + CRLF + body;
+            return new ResponseBuilder()
+                    .withStatusCode(HTTPStatusCodes._200.getCode())
+                    .withHeader(headersResponse)
+                    .withBody(body)
+                    .build();
         }
-        return Codes.HTTP_VERSION.getCode() + Codes._405.getCode() + CRLF + headersResponse + CRLF + CRLF;
+        return new ResponseBuilder()
+                .withStatusCode(HTTPStatusCodes._405.getCode())
+                .withHeader(headersResponse)
+                .withBody("")
+                .build();
     }
 }

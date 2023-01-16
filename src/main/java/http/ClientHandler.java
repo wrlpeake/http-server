@@ -24,8 +24,8 @@ public class ClientHandler {
             String path = RequestHandler.getPath(parameters);
             String body = RequestHandler.getBody(request);
 
-            String response = responseHandler.buildResponse(method, path, body);
-            out.write(responseHandler.response(response));
+            Response response = responseHandler.getResponse(method, path, body);
+            out.write(response.getResponse().getBytes());
             out.writeTo(client.getOutputStream());
 
             client.close();

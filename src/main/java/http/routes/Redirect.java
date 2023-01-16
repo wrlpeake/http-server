@@ -1,6 +1,8 @@
 package http.routes;
 
-import http.Codes;
+import http.HTTPStatusCodes;
+import http.Response;
+import http.ResponseBuilder;
 import http.Route;
 
 import java.util.Arrays;
@@ -14,15 +16,24 @@ public class Redirect implements Route {
     final String redirectLocation;
     public Redirect() {
         CRLF = "\r\n";
-        headers = Arrays.asList("GET", "HEAD");
-        headersResponse = String.format("Allow: %s, %s", headers.get(0), headers.get(1));
         redirectLocation = "Location: http://127.0.0.1:5000/simple_get";
+        headers = Arrays.asList("GET", "HEAD");
+        headersResponse = String.format("%s%sAllow: %s, %s", redirectLocation, CRLF, headers.get(0), headers.get(1));
+
     }
     @Override
-    public String response(String method, String body) {
+    public Response response(String method, String body) {
         if (headers.contains(method)) {
-            return Codes.HTTP_VERSION.getCode() + Codes._301.getCode() + CRLF + redirectLocation + CRLF + headersResponse + CRLF + CRLF;
+            return new ResponseBuilder()
+                    .withStatusCode(HTTPStatusCodes._301.getCode())
+                    .withHeader(headersResponse)
+                    .withBody("")
+                    .build();
         }
-        return Codes.HTTP_VERSION.getCode() + Codes._405.getCode() + CRLF + headersResponse + CRLF + CRLF;
+        return new ResponseBuilder()
+                .withStatusCode(HTTPStatusCodes._405.getCode())
+                .withHeader(headersResponse)
+                .withBody("")
+                .build();
     }
 }

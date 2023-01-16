@@ -1,6 +1,8 @@
 package http.routes;
 
-import http.Codes;
+import http.HTTPStatusCodes;
+import http.Response;
+import http.ResponseBuilder;
 import http.Route;
 
 import java.util.Arrays;
@@ -11,21 +13,29 @@ public class SimpleGETWithBody implements Route {
     final List<String> headers;
     final String headersResponse;
 
-    final String body;
+    final String responseBody;
 
     public SimpleGETWithBody() {
         CRLF = "\r\n";
         headers = Arrays.asList("GET", "HEAD");
         headersResponse = String.format("Allow: %s, %s", headers.get(0), headers.get(1));
-        body = "Hello world";
+        responseBody = "Hello world";
     }
 
     @Override
-    public String response(String method, String requestBody) {
+    public Response response(String method, String body) {
         if (headers.contains(method)) {
-            return Codes.HTTP_VERSION.getCode() + Codes._200.getCode() + CRLF + headersResponse + CRLF + CRLF + body;
+            return new ResponseBuilder()
+                    .withStatusCode(HTTPStatusCodes._200.getCode())
+                    .withHeader(headersResponse)
+                    .withBody(responseBody)
+                    .build();
         }
-        return Codes.HTTP_VERSION.getCode() + Codes._405.getCode() + CRLF + headersResponse + CRLF + CRLF;
+        return new ResponseBuilder()
+                .withStatusCode(HTTPStatusCodes._405.getCode())
+                .withHeader(headersResponse)
+                .withBody("")
+                .build();
     }
 
 }
