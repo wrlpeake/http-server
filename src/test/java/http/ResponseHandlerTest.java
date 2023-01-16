@@ -9,6 +9,13 @@ import java.io.InputStream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ResponseHandlerTest {
+    Router router;
+    static ResponseHandler responseHandler;
+
+    public ResponseHandlerTest() {
+        router = new Router();
+        responseHandler = new ResponseHandler(router);
+    }
 
     public static String buildResponseHelper(InputStream input) throws IOException {
         String request = RequestHandler.getRequest(input);
@@ -17,7 +24,7 @@ public class ResponseHandlerTest {
         String path = RequestHandler.getPath(parameters);
         String body = RequestHandler.getBody(request);
 
-        return ResponseHandler.buildResponse(method, path, body);
+        return responseHandler.buildResponse(method, path, body);
     }
 
     @Test

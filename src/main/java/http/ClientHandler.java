@@ -5,9 +5,12 @@ import java.net.Socket;
 
 public class ClientHandler {
     private final Socket client;
+    private final ResponseHandler responseHandler;
 
     public ClientHandler(Socket socket) {
         client = socket;
+        Router router = new Router();
+        responseHandler = new ResponseHandler(router);
     }
 
     public void start() {
@@ -21,8 +24,8 @@ public class ClientHandler {
             String path = RequestHandler.getPath(parameters);
             String body = RequestHandler.getBody(request);
 
-            String response = ResponseHandler.buildResponse(method, path, body);
-            out.write(ResponseHandler.response(response));
+            String response = responseHandler.buildResponse(method, path, body);
+            out.write(responseHandler.response(response));
             out.writeTo(client.getOutputStream());
 
             client.close();
