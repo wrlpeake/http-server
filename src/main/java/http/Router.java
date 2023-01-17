@@ -22,7 +22,11 @@ public class Router {
             Route route = routeHashMap.get(path);
             return route.response(method, body);
         }
-        return null;
+        return new ResponseBuilder()
+                .withStatusCode(HTTPStatusCodes._404.getCode())
+                .withHeader("")
+                .withBody("")
+                .build();
     }
 
 }

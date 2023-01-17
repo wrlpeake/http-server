@@ -4,12 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Large refactor to implement a `ResponseBuilder`. The `ResponseBuilder` uses the builder pattern to return an object of the `Response` class.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/http/Request.java" afterDir="false" />
+    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Implements a `Request` class with getters/setters to extract request parsing from the `ClientHandler`">
+      <change afterPath="$PROJECT_DIR$/src/main/java/http/RequestParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/http/RequestParserTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/http/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/http/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/Response.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/http/ResponseHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/http/ResponseHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/Request.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/RequestHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/ResponseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/ResponseBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/ResponseHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/Route.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/Router.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/http/RequestHandlerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/http/ResponseHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/http/ResponseBuilderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/http/RouterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/http/RouterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -255,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673883705380</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Implements a `Request` class with getters/setters to extract request parsing from the `ClientHandler`">
+      <created>1673886805678</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1673886805678</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,7 +287,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Page Not Found returns 404" />
     <MESSAGE value="Refactoring 404 response and updating test to use web server and test client borrowed from echo server" />
     <MESSAGE value="Fixed port 5000 issue due to Mac Airplay receiver" />
     <MESSAGE value="Adds application details to `build.gradle` and logs HTTP requests to command line in preparation for parsing." />
@@ -298,6 +311,7 @@
     <MESSAGE value="Lifts the `Router` initialisation to the `ClientHandler` and injects it to the `ResponseHandler`" />
     <MESSAGE value="Lifts the `Router` initialisation to the `ClientHandler` and injects it to the `ResponseHandler`. Also renames `Web Server` to `HTTPServer`" />
     <MESSAGE value="Large refactor to implement a `ResponseBuilder`. The `ResponseBuilder` uses the builder pattern to return an object of the `Response` class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Large refactor to implement a `ResponseBuilder`. The `ResponseBuilder` uses the builder pattern to return an object of the `Response` class." />
+    <MESSAGE value="Implements a `Request` class with getters/setters to extract request parsing from the `ClientHandler`" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implements a `Request` class with getters/setters to extract request parsing from the `ClientHandler`" />
   </component>
 </project>

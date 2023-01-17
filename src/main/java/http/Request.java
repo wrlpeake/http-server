@@ -2,37 +2,25 @@ package http;
 
 public class Request {
     private final String request;
-    private String parameters;
-    private String method;
-    private String path;
-    private String body;
+    private final String parameters;
+    private final String method;
+    private final String path;
+    private final String body;
 
-    public Request(String request) {
+    public Request(String request, String parameters, String method, String path, String body) {
         this.request = request;
+        this.parameters = parameters;
+        this.method = method;
+        this.path = path;
+        this.body = body;
     }
 
-    public void setParameters(String request) {
-        this.parameters = RequestHandler.getRequestParameters(request);
+    public String getRequest() {
+        return this.request;
     }
 
-    public void setMethod(String parameters) {
-        this.method = RequestHandler.getMethod(parameters);
-    }
-
-    public void setPath(String parameters) {
-        this.path = RequestHandler.getPath(parameters);
-
-    }
-
-    public void setBody(String request) {
-        this.body = RequestHandler.getBody(request);
-    }
-
-    public void parseRequest() {
-        setParameters(this.request);
-        setMethod(this.parameters);
-        setPath(this.parameters);
-        setBody(this.request);
+    public String getParameters() {
+        return this.parameters;
     }
 
     public String getMethod() {

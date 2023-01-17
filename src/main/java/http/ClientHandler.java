@@ -5,13 +5,11 @@ import java.net.Socket;
 
 public class ClientHandler {
     private final Socket client;
-    private final ResponseHandler responseHandler;
-
+    Router router;
 
     public ClientHandler(Socket socket) {
         client = socket;
-        Router router = new Router();
-        responseHandler = new ResponseHandler(router);
+        router = new Router();
     }
 
     public void start() {
@@ -19,10 +17,15 @@ public class ClientHandler {
             InputStream in = client.getInputStream();
             ByteArrayOutputStream out = new ByteArrayOutputStream();
 
-            Request request = new Request(RequestHandler.getRequest(in));
-            request.parseRequest();
+            Request request = new RequestParser()
+                    .withRequest(in)
+                    .withParameters()
+                    .withMethod()
+                    .withPath()
+                    .withBody()
+                    .parse();
 
-            Response response = responseHandler.getResponse(request.getMethod(), request.getPath(), request.getBody());
+            Response response = router.getResponse(request.getMethod(), request.getPath(), request.getBody());
             out.write(response.responseString().getBytes());
             out.writeTo(client.getOutputStream());
 

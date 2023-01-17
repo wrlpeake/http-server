@@ -3,7 +3,6 @@ package http;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class RouterTest {
     Router router = new Router();
@@ -28,8 +27,9 @@ public class RouterTest {
         method = "POST";
         path = "/does_not_exist";
         body = "foobar";
-
-        assertNull(router.getResponse(method, path, body));
+        expectedResponse = "HTTP/1.1 404 Not Found\r\n\r\n";
+        Response response = router.getResponse(method, path, body);
+        assertEquals(expectedResponse, response.responseString());
     }
 
     @Test

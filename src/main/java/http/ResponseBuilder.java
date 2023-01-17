@@ -23,7 +23,6 @@ public class ResponseBuilder {
         return this;
     }
 
-
     public String buildHeader() {
         if (Objects.equals(header, "")) {
             return header + CRLF;
