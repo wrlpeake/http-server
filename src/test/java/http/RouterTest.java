@@ -115,7 +115,20 @@ public class RouterTest {
         path = "/text_response";
         body = "";
 
-        expectedResponse = "HTTP/1.1 200 OK\r\nContent-Type: text/plain;charset=utf-8\r\nAllow: GET, HEAD\r\n\r\ntext response";
+        expectedResponse = "HTTP/1.1 200 OK\r\nContent-Type: text/plain;charset=utf-8\r\nAllow: GET, HEAD\r\n\r\n" +
+                "text response";
+        Response response = router.getResponse(method, path, body);
+        assertEquals(expectedResponse, response.responseString());
+    }
+
+    @Test
+    public void HTMLResponseRouteTest() {
+        method = "GET";
+        path = "/html_response";
+        body = "";
+
+        expectedResponse = "HTTP/1.1 200 OK\r\nContent-Type: text/html;charset=utf-8\r\nAllow: GET, HEAD\r\n\r\n" +
+                "<html><body><p>HTML Response</p></body></html>";
         Response response = router.getResponse(method, path, body);
         assertEquals(expectedResponse, response.responseString());
     }
