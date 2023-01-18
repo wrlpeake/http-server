@@ -1,9 +1,6 @@
 package http.routes;
 
-import http.HTTPStatusCodes;
-import http.Response;
-import http.ResponseBuilder;
-import http.Route;
+import http.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -15,7 +12,7 @@ public class MethodOptions2 implements Route {
 
     public MethodOptions2() {
         CRLF = "\r\n";
-        headers = Arrays.asList("GET", "HEAD", "OPTIONS", "PUT", "POST");
+        headers = Arrays.asList(Methods.GET.getMethod(), Methods.HEAD.getMethod(), Methods.OPTIONS.getMethod(), Methods.PUT.getMethod(), Methods.POST.getMethod());
         headersResponse = String.format("Allow: %s, %s, %s, %s, %s", headers.get(0), headers.get(1), headers.get(2), headers.get(3), headers.get(4));
     }
     @Override

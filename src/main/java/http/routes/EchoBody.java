@@ -1,9 +1,6 @@
 package http.routes;
 
-import http.HTTPStatusCodes;
-import http.Response;
-import http.ResponseBuilder;
-import http.Route;
+import http.*;
 
 import java.util.List;
 
@@ -14,7 +11,7 @@ public class EchoBody implements Route {
 
     public EchoBody() {
         CRLF = "\r\n";
-        headers = List.of("POST");
+        headers = List.of(Methods.POST.getMethod());
         headersResponse = String.format("Allow: %s", headers.get(0));
     }
 
