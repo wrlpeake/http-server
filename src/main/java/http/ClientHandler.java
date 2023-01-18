@@ -5,7 +5,7 @@ import java.net.Socket;
 
 public class ClientHandler {
     private final Socket client;
-    Router router;
+    private final Router router;
 
     public ClientHandler(Socket socket) {
         client = socket;
