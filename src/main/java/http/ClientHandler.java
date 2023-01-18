@@ -5,29 +5,34 @@ import java.net.Socket;
 
 public class ClientHandler {
     private final Socket client;
-    private final RequestHandler requestHandler;
-
-    private final ResponseHandler responseHandler;
+    private final Router router;
 
     public ClientHandler(Socket socket) {
         client = socket;
-        requestHandler = new RequestHandler();
-        responseHandler = new ResponseHandler();
+        router = new Router();
     }
 
     public void start() {
         try {
             InputStream in = client.getInputStream();
             ByteArrayOutputStream out = new ByteArrayOutputStream();
-            String request = requestHandler.getRequest(in);
-            System.out.println(request);
 
-            out.write(responseHandler.getPageNotFoundResponse());
+            Request request = new RequestParser()
+                    .withRequest(in)
+                    .withParameters()
+                    .withMethod()
+                    .withPath()
+                    .withBody()
+                    .parse();
 
+            Response response = router.getResponse(request.getMethod(), request.getPath(), request.getBody());
+            out.write(response.responseString().getBytes());
             out.writeTo(client.getOutputStream());
+
             client.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 }
+
