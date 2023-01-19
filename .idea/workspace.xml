@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Removing unnecessary `CRLF` string from Routes." />
+    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Bring backs simple class imports where IDE had changed to `*`" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -284,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674128980243</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Bring backs simple class imports where IDE had changed to `*`">
+      <created>1674129612150</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1674129612150</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,7 +309,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added Git submodule to include `http_server_spec` feature tests repo in the project. Updated README with instructions on how to run the test suite." />
     <MESSAGE value="Rename `responseString` to `statusCode` to better reflect its use." />
     <MESSAGE value="Rename WebServerTest to ResponseHandlerTest to better reflect its use." />
     <MESSAGE value="GET request to /simple_get_with_body returns a 200 with the body &quot;Hello world&quot;" />
@@ -327,6 +333,7 @@
     <MESSAGE value="Implements `Scenario: Returning a text response` feature and introduces enums for `CONTENT_TYPES` and `METHODS`" />
     <MESSAGE value="Implements `Scenario: Returning a HTML response` feature" />
     <MESSAGE value="Removing unnecessary `CRLF` string from Routes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removing unnecessary `CRLF` string from Routes." />
+    <MESSAGE value="Bring backs simple class imports where IDE had changed to `*`" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bring backs simple class imports where IDE had changed to `*`" />
   </component>
 </project>
