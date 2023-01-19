@@ -11,13 +11,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class HTMLResponse implements Route {
-    final String CRLF;
+    final static String CRLF = "\r\n";
     final List<String> headers;
     final String headersResponse;
     final String textBody;
 
     public HTMLResponse() {
-        CRLF = "\r\n";
         headers = Arrays.asList(ContentTypes.CONTENT_TYPE_HTML.getType(), Methods.GET.getMethod(), Methods.HEAD.getMethod());
         headersResponse = String.format("%s%sAllow: %s, %s", headers.get(0), CRLF, headers.get(1), headers.get(2));
         textBody = "<html><body><p>HTML Response</p></body></html>";
