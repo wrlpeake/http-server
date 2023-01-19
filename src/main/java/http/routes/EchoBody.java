@@ -5,12 +5,10 @@ import http.*;
 import java.util.List;
 
 public class EchoBody implements Route {
-    final String CRLF;
     final List<String> headers;
     final String headersResponse;
 
     public EchoBody() {
-        CRLF = "\r\n";
         headers = List.of(Methods.POST.getMethod());
         headersResponse = String.format("Allow: %s", headers.get(0));
     }

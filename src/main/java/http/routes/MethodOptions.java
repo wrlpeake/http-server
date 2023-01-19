@@ -6,12 +6,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MethodOptions implements Route {
-    final String CRLF;
     final List<String> headers;
     final String headersResponse;
 
     public MethodOptions() {
-        CRLF = "\r\n";
         headers = Arrays.asList(Methods.GET.getMethod(), Methods.HEAD.getMethod(), Methods.OPTIONS.getMethod());
         headersResponse = String.format("Allow: %s, %s, %s", headers.get(0), headers.get(1), headers.get(2));
     }

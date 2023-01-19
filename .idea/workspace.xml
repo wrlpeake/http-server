@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Implements `Scenario: Returning a text response` feature and introduces enums for `CONTENT_TYPES` and `METHODS`">
-      <change afterPath="$PROJECT_DIR$/src/main/java/http/routes/structured_data/HTMLResponse.java" afterDir="false" />
+    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Implements `Scenario: Returning a HTML response` feature">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/http/ContentTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/ContentTypes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/http/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/Router.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/http/ResponseBuilderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/http/ResponseBuilderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/http/RouterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/http/RouterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674045246841</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Implements `Scenario: Returning a HTML response` feature">
+      <created>1674055006819</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1674055006819</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +297,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Adds application details to `build.gradle` and logs HTTP requests to command line in preparation for parsing." />
     <MESSAGE value="Changed `InputOutput` to `TestClientInputOutput` to make it clear what this is for." />
     <MESSAGE value="Added Git submodule to include `http_server_spec` feature tests repo in the project. Updated README with instructions on how to run the test suite." />
     <MESSAGE value="Rename `responseString` to `statusCode` to better reflect its use." />
@@ -320,6 +321,7 @@
     <MESSAGE value="Implements a `Request` class with getters/setters to extract request parsing from the `ClientHandler`" />
     <MESSAGE value="Refactors `RequestHandler` to `RequestParser`. Uses builder pattern to create parsed `Request` objects." />
     <MESSAGE value="Implements `Scenario: Returning a text response` feature and introduces enums for `CONTENT_TYPES` and `METHODS`" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implements `Scenario: Returning a text response` feature and introduces enums for `CONTENT_TYPES` and `METHODS`" />
+    <MESSAGE value="Implements `Scenario: Returning a HTML response` feature" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implements `Scenario: Returning a HTML response` feature" />
   </component>
 </project>

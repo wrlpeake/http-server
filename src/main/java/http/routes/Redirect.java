@@ -9,14 +9,12 @@ public class Redirect implements Route {
     final String CRLF;
     final List<String> headers;
     final String headersResponse;
-
     final String redirectLocation;
     public Redirect() {
         CRLF = "\r\n";
         redirectLocation = "Location: http://127.0.0.1:5000/simple_get";
         headers = Arrays.asList(Methods.GET.getMethod(), Methods.HEAD.getMethod());
         headersResponse = String.format("%s%sAllow: %s, %s", redirectLocation, CRLF, headers.get(0), headers.get(1));
-
     }
     @Override
     public Response response(String method, String body) {
