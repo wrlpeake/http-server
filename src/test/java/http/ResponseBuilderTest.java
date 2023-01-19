@@ -160,4 +160,16 @@ public class ResponseBuilderTest {
                 "<html><body><p>HTML Response</p></body></html>";
         assertEquals(status200ResponseWithHTML, response);
     }
+
+    @Test
+    public void JSONResponseTest() throws IOException {
+        String requestParameters = "GET /json_response HTTP/1.1\r\n";
+        ByteArrayInputStream input = new ByteArrayInputStream(requestParameters.getBytes());
+
+        String response = ResponseBuilderTest.responseBuilderHelper(input);
+
+        String status200ResponseWithJSON = "HTTP/1.1 200 OK\r\nContent-Type: application/json;charset=utf-8\r\nAllow: GET, HEAD\r\n\r\n" +
+                "{\"key1\":\"value1\",\"key2\":\"value2\"}";
+        assertEquals(status200ResponseWithJSON, response);
+    }
 }

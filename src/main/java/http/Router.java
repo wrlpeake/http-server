@@ -2,6 +2,7 @@ package http;
 
 import http.routes.*;
 import http.routes.structured_data.HTMLResponse;
+import http.routes.structured_data.JSONResponse;
 import http.routes.structured_data.TextResponse;
 
 import java.util.HashMap;
@@ -19,6 +20,7 @@ public class Router {
         routeHashMap.put("/echo_body", new EchoBody());
         routeHashMap.put("/text_response", new TextResponse());
         routeHashMap.put("/html_response", new HTMLResponse());
+        routeHashMap.put("/json_response", new JSONResponse());
     }
 
     public Response getResponse(String method, String path, String body) {

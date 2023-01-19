@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Bring backs simple class imports where IDE had changed to `*`" />
+    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Bring backs simple class imports where IDE had changed to `*`">
+      <change afterPath="$PROJECT_DIR$/src/main/java/http/routes/structured_data/JSONResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/ContentTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/ContentTypes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/Router.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/http/RouterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/http/RouterTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -291,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674129612150</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Removes unfinished test from last commit.">
+      <created>1674129784202</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1674129784202</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,7 +323,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Rename `responseString` to `statusCode` to better reflect its use." />
     <MESSAGE value="Rename WebServerTest to ResponseHandlerTest to better reflect its use." />
     <MESSAGE value="GET request to /simple_get_with_body returns a 200 with the body &quot;Hello world&quot;" />
     <MESSAGE value="Added Simple HEAD routes and responses" />
@@ -334,6 +347,7 @@
     <MESSAGE value="Implements `Scenario: Returning a HTML response` feature" />
     <MESSAGE value="Removing unnecessary `CRLF` string from Routes." />
     <MESSAGE value="Bring backs simple class imports where IDE had changed to `*`" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bring backs simple class imports where IDE had changed to `*`" />
+    <MESSAGE value="Removes unfinished test from last commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removes unfinished test from last commit." />
   </component>
 </project>
