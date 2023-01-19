@@ -1,6 +1,11 @@
 package http.routes.structured_data;
 
-import http.*;
+import http.ContentTypes;
+import http.HTTPStatusCodes;
+import http.Methods;
+import http.Response;
+import http.ResponseBuilder;
+import http.Route;
 import org.json.JSONObject;
 import java.util.Arrays;
 import java.util.List;
