@@ -6,28 +6,30 @@ import http.Methods;
 import http.Response;
 import http.ResponseBuilder;
 import http.Route;
-
+import org.json.JSONObject;
 import java.util.Arrays;
 import java.util.List;
 
-public class HTMLResponse implements Route {
+
+public class JSONResponse implements Route {
     final static String CRLF = "\r\n";
     final List<String> headers;
     final String headersResponse;
-    final String textBody;
+    final JSONObject jsonBody;
 
-    public HTMLResponse() {
-        headers = Arrays.asList(ContentTypes.CONTENT_TYPE_HTML.getType(), Methods.GET.getMethod(), Methods.HEAD.getMethod());
+    public JSONResponse() {
+        headers = Arrays.asList(ContentTypes.CONTENT_TYPE_JSON.getType(), Methods.GET.getMethod(), Methods.HEAD.getMethod());
         headersResponse = String.format("%s%sAllow: %s, %s", headers.get(0), CRLF, headers.get(1), headers.get(2));
-        textBody = "<html><body><p>HTML Response</p></body></html>";
+        jsonBody = new JSONObject("{ key1: 'value1', key2: 'value2' }");
     }
+
     @Override
     public Response response(String method, String body) {
         if (headers.contains(method)) {
             return new ResponseBuilder()
                     .withStatusCode(HTTPStatusCodes._200.getCode())
                     .withHeader(headersResponse)
-                    .withBody(textBody)
+                    .withBody(jsonBody.toString())
                     .build();
         }
         return new ResponseBuilder()

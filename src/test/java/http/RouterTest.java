@@ -133,4 +133,16 @@ public class RouterTest {
         assertEquals(expectedResponse, response.responseString());
     }
 
+    @Test
+    public void JSONResponseRouteTest() {
+        method = "GET";
+        path = "/json_response";
+        body = "";
+
+        expectedResponse = "HTTP/1.1 200 OK\r\nContent-Type: application/json;charset=utf-8\r\nAllow: GET, HEAD\r\n\r\n" +
+                "{\"key1\":\"value1\",\"key2\":\"value2\"}";
+        Response response = router.getResponse(method, path, body);
+        assertEquals(expectedResponse, response.responseString());
+    }
+
 }
