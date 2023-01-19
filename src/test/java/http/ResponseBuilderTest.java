@@ -138,4 +138,26 @@ public class ResponseBuilderTest {
         assertEquals(status200ResponseWithBody, response);
     }
 
+    @Test
+    public void textResponseTest() throws IOException {
+        String requestParameters = "GET /text_response HTTP/1.1\r\n";
+        ByteArrayInputStream input = new ByteArrayInputStream(requestParameters.getBytes());
+
+        String response = ResponseBuilderTest.responseBuilderHelper(input);
+
+        String status200ResponseWithText = "HTTP/1.1 200 OK\r\nContent-Type: text/plain;charset=utf-8\r\nAllow: GET, HEAD\r\n\r\ntext response";
+        assertEquals(status200ResponseWithText, response);
+    }
+
+    @Test
+    public void HTMLResponseTest() throws IOException {
+        String requestParameters = "GET /html_response HTTP/1.1\r\n";
+        ByteArrayInputStream input = new ByteArrayInputStream(requestParameters.getBytes());
+
+        String response = ResponseBuilderTest.responseBuilderHelper(input);
+
+        String status200ResponseWithHTML = "HTTP/1.1 200 OK\r\nContent-Type: text/html;charset=utf-8\r\nAllow: GET, HEAD\r\n\r\n" +
+                "<html><body><p>HTML Response</p></body></html>";
+        assertEquals(status200ResponseWithHTML, response);
+    }
 }

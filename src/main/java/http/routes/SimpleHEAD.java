@@ -1,6 +1,7 @@
 package http.routes;
 
 import http.HTTPStatusCodes;
+import http.Methods;
 import http.Response;
 import http.ResponseBuilder;
 import http.Route;
@@ -9,13 +10,11 @@ import java.util.Arrays;
 import java.util.List;
 
 public class SimpleHEAD implements Route {
-    final String CRLF;
     final List<String> headers;
     final String headersResponse;
 
     public SimpleHEAD() {
-        CRLF = "\r\n";
-        headers = Arrays.asList("HEAD", "OPTIONS");
+        headers = Arrays.asList(Methods.HEAD.getMethod(), Methods.OPTIONS.getMethod());
         headersResponse = String.format("Allow: %s, %s", headers.get(0), headers.get(1));
     }
     @Override

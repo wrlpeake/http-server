@@ -1,5 +1,6 @@
-package http.routes;
+package http.routes.structured_data;
 
+import http.ContentTypes;
 import http.HTTPStatusCodes;
 import http.Methods;
 import http.Response;
@@ -9,24 +10,25 @@ import http.Route;
 import java.util.Arrays;
 import java.util.List;
 
-public class SimpleGETWithBody implements Route {
+public class TextResponse implements Route {
+    final String CRLF;
     final List<String> headers;
     final String headersResponse;
-    final String responseBody;
+    final String textBody;
 
-    public SimpleGETWithBody() {
-        headers = Arrays.asList(Methods.GET.getMethod(), Methods.HEAD.getMethod());
-        headersResponse = String.format("Allow: %s, %s", headers.get(0), headers.get(1));
-        responseBody = "Hello world";
+    public TextResponse() {
+        CRLF = "\r\n";
+        headers = Arrays.asList(ContentTypes.CONTENT_TYPE_TEXT.getType(), Methods.GET.getMethod(), Methods.HEAD.getMethod());
+        headersResponse = String.format("%s%sAllow: %s, %s", headers.get(0), CRLF, headers.get(1), headers.get(2));
+        textBody = "text response";
     }
-
     @Override
     public Response response(String method, String body) {
         if (headers.contains(method)) {
             return new ResponseBuilder()
                     .withStatusCode(HTTPStatusCodes._200.getCode())
                     .withHeader(headersResponse)
-                    .withBody(responseBody)
+                    .withBody(textBody)
                     .build();
         }
         return new ResponseBuilder()
@@ -35,5 +37,4 @@ public class SimpleGETWithBody implements Route {
                 .withBody("")
                 .build();
     }
-
 }

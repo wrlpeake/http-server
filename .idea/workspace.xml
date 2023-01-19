@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Refactors `RequestHandler` to `RequestParser`. Uses builder pattern to create parsed `Request` objects." />
+    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Bring backs simple class imports where IDE had changed to `*`" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,8 +66,9 @@
       <recent name="http" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="http.routes" />
+      <recent name="http.routes.structured_data" />
       <recent name="http" />
+      <recent name="http.routes" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -262,7 +263,35 @@
       <option name="project" value="LOCAL" />
       <updated>1673980137692</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Implements `Scenario: Returning a text response` feature and introduces enums for `CONTENT_TYPES` and `METHODS`">
+      <created>1674045246841</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1674045246841</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Implements `Scenario: Returning a HTML response` feature">
+      <created>1674055006819</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1674055006819</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Removing unnecessary `CRLF` string from Routes.">
+      <created>1674128980243</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1674128980243</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Bring backs simple class imports where IDE had changed to `*`">
+      <created>1674129612150</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1674129612150</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,10 +309,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed port 5000 issue due to Mac Airplay receiver" />
-    <MESSAGE value="Adds application details to `build.gradle` and logs HTTP requests to command line in preparation for parsing." />
-    <MESSAGE value="Changed `InputOutput` to `TestClientInputOutput` to make it clear what this is for." />
-    <MESSAGE value="Added Git submodule to include `http_server_spec` feature tests repo in the project. Updated README with instructions on how to run the test suite." />
     <MESSAGE value="Rename `responseString` to `statusCode` to better reflect its use." />
     <MESSAGE value="Rename WebServerTest to ResponseHandlerTest to better reflect its use." />
     <MESSAGE value="GET request to /simple_get_with_body returns a 200 with the body &quot;Hello world&quot;" />
@@ -305,6 +330,10 @@
     <MESSAGE value="Large refactor to implement a `ResponseBuilder`. The `ResponseBuilder` uses the builder pattern to return an object of the `Response` class." />
     <MESSAGE value="Implements a `Request` class with getters/setters to extract request parsing from the `ClientHandler`" />
     <MESSAGE value="Refactors `RequestHandler` to `RequestParser`. Uses builder pattern to create parsed `Request` objects." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactors `RequestHandler` to `RequestParser`. Uses builder pattern to create parsed `Request` objects." />
+    <MESSAGE value="Implements `Scenario: Returning a text response` feature and introduces enums for `CONTENT_TYPES` and `METHODS`" />
+    <MESSAGE value="Implements `Scenario: Returning a HTML response` feature" />
+    <MESSAGE value="Removing unnecessary `CRLF` string from Routes." />
+    <MESSAGE value="Bring backs simple class imports where IDE had changed to `*`" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bring backs simple class imports where IDE had changed to `*`" />
   </component>
 </project>
