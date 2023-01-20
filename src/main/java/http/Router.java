@@ -4,7 +4,6 @@ import http.routes.*;
 import http.routes.structured_data.HTMLResponse;
 import http.routes.structured_data.JSONResponse;
 import http.routes.structured_data.TextResponse;
-import http.routes.structured_data.XMLResponse;
 
 import java.util.HashMap;
 
@@ -22,7 +21,6 @@ public class Router {
         routeHashMap.put("/text_response", new TextResponse());
         routeHashMap.put("/html_response", new HTMLResponse());
         routeHashMap.put("/json_response", new JSONResponse());
-        routeHashMap.put("/xml_response", new XMLResponse());
     }
 
     public Response getResponse(String method, String path, String body) {

@@ -4,8 +4,7 @@ public enum ContentTypes {
     CONTENT_TYPE("Content-Type: "),
     CONTENT_TYPE_TEXT(CONTENT_TYPE.getType() + "text/plain;charset=utf-8"),
     CONTENT_TYPE_HTML(CONTENT_TYPE.getType() + "text/html;charset=utf-8"),
-    CONTENT_TYPE_JSON(CONTENT_TYPE.getType() + "application/json;charset=utf-8"),
-    CONTENT_TYPE_XML(CONTENT_TYPE.getType() + "application/xml;charset=utf-8");
+    CONTENT_TYPE_JSON(CONTENT_TYPE.getType() + "application/json;charset=utf-8");
 
     private final String type;
 
