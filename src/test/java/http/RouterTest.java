@@ -145,4 +145,16 @@ public class RouterTest {
         assertEquals(expectedResponse, response.responseString());
     }
 
+    @Test
+    public void XMLResponseRouteTest() {
+        method = "GET";
+        path = "/xml_response";
+        body = "";
+
+        expectedResponse = "HTTP/1.1 200 OK\r\nContent-Type: application/xml;charset=utf-8\r\nAllow: GET, HEAD\r\n\r\n" +
+                "<note><body>XML Response</body></note>";
+        Response response = router.getResponse(method, path, body);
+        assertEquals(expectedResponse, response.responseString());
+    }
+
 }

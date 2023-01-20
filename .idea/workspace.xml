@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Implements `return a JSON response` feature. Adds `implementation 'org.json:json:20171018'` to `build.gradle` to import `org.jsonObject` class." />
+    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Implements `return a JSON response` feature. Adds `implementation 'org.json:json:20171018'` to `build.gradle` to import `org.jsonObject` class.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/http/routes/structured_data/XMLResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/ContentTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/ContentTypes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/Router.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/http/ResponseBuilderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/http/ResponseBuilderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/http/RouterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/http/RouterTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
