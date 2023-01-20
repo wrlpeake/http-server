@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Implements `return a JSON response` feature. Adds `implementation 'org.json:json:20171018'` to `build.gradle` to import `org.jsonObject` class." />
+    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Implements `Returning an XML response` feature by adding new `Route` XMLResponse.java">
+      <change afterPath="$PROJECT_DIR$/src/main/java/http/routes/structured_data/XMLResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/ContentTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/ContentTypes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/Router.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/http/ResponseBuilderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/http/ResponseBuilderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/http/RouterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/http/RouterTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,6 +31,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="02-Structured-Data" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -305,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674136286745</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Implements `Returning an XML response` feature by adding new `Route` XMLResponse.java">
+      <created>1674214484083</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1674214484083</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,7 +342,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="GET request to /simple_get_with_body returns a 200 with the body &quot;Hello world&quot;" />
     <MESSAGE value="Added Simple HEAD routes and responses" />
     <MESSAGE value="Refactoring routes by extracting them into their own Routes package and classes" />
     <MESSAGE value="Extracted codes into an `enum` to remove duplication." />
@@ -348,6 +366,7 @@
     <MESSAGE value="Bring backs simple class imports where IDE had changed to `*`" />
     <MESSAGE value="Removes unfinished test from last commit." />
     <MESSAGE value="Implements `return a JSON response` feature. Adds `implementation 'org.json:json:20171018'` to `build.gradle` to import `org.jsonObject` class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implements `return a JSON response` feature. Adds `implementation 'org.json:json:20171018'` to `build.gradle` to import `org.jsonObject` class." />
+    <MESSAGE value="Implements `Returning an XML response` feature by adding new `Route` XMLResponse.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implements `Returning an XML response` feature by adding new `Route` XMLResponse.java" />
   </component>
 </project>
