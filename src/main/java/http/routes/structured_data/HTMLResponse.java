@@ -17,8 +17,8 @@ public class HTMLResponse implements Route {
     final String textBody;
 
     public HTMLResponse() {
-        headers = Arrays.asList(ContentTypes.CONTENT_TYPE_HTML.getType(), Methods.GET.getMethod(), Methods.HEAD.getMethod());
-        headersResponse = String.format("%s%sAllow: %s, %s", headers.get(0), CRLF, headers.get(1), headers.get(2));
+        headers = Arrays.asList(Methods.GET.getMethod(), Methods.HEAD.getMethod());
+        headersResponse = String.format("%s%sAllow: %s, %s", ContentTypes.CONTENT_TYPE_HTML.getType(), CRLF, headers.get(0), headers.get(1));
         textBody = "<html><body><p>HTML Response</p></body></html>";
     }
     @Override

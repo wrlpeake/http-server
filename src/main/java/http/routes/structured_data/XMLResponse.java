@@ -12,8 +12,8 @@ public class XMLResponse implements Route {
     final String xmlBody;
 
     public XMLResponse() {
-        headers = Arrays.asList(ContentTypes.CONTENT_TYPE_XML.getType(), Methods.GET.getMethod(), Methods.HEAD.getMethod());
-        headersResponse = String.format("%s%sAllow: %s, %s", headers.get(0), CRLF, headers.get(1), headers.get(2));
+        headers = Arrays.asList(Methods.GET.getMethod(), Methods.HEAD.getMethod());
+        headersResponse = String.format("%s%sAllow: %s, %s", ContentTypes.CONTENT_TYPE_XML.getType(), CRLF, headers.get(0), headers.get(1));
         xmlBody = "<note><body>XML Response</body></note>";
     }
     @Override
