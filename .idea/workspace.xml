@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Implements `Returning an XML response` feature by adding new `Route` XMLResponse.java">
+    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Removed `CONTENT_TYPES` from the `headers&lt;&gt;` array to address edge case of the content type producing a 200 OK response in error.">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,23 +49,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="http" />
@@ -87,6 +90,9 @@
       <option name="presentableId" value="Default" />
       <updated>1671553769946</updated>
       <workItem from="1671553771364" duration="56304000" />
+      <workItem from="1674468999171" duration="763000" />
+      <workItem from="1674555376444" duration="724000" />
+      <workItem from="1674557164792" duration="4705000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1671554143949</created>
@@ -326,7 +332,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674215361983</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Removed `CONTENT_TYPES` from the `headers&lt;&gt;` array to address edge case of the content type producing a 200 OK response in error.">
+      <created>1674226608030</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1674226608030</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,7 +357,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added Simple HEAD routes and responses" />
     <MESSAGE value="Refactoring routes by extracting them into their own Routes package and classes" />
     <MESSAGE value="Extracted codes into an `enum` to remove duplication." />
     <MESSAGE value="Extracted codes into an `enum` to remove duplication. Adds 405 method not allowed responses to current routes." />
@@ -369,6 +381,7 @@
     <MESSAGE value="Removes unfinished test from last commit." />
     <MESSAGE value="Implements `return a JSON response` feature. Adds `implementation 'org.json:json:20171018'` to `build.gradle` to import `org.jsonObject` class." />
     <MESSAGE value="Implements `Returning an XML response` feature by adding new `Route` XMLResponse.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implements `Returning an XML response` feature by adding new `Route` XMLResponse.java" />
+    <MESSAGE value="Removed `CONTENT_TYPES` from the `headers&lt;&gt;` array to address edge case of the content type producing a 200 OK response in error." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed `CONTENT_TYPES` from the `headers&lt;&gt;` array to address edge case of the content type producing a 200 OK response in error." />
   </component>
 </project>

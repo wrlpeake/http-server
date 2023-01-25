@@ -29,12 +29,10 @@ public class Router {
         if (routeHashMap.containsKey(path)) {
             Route route = routeHashMap.get(path);
             return route.response(method, body);
+        } else {
+            Route notFound = new NotFound();
+            return notFound.response(method, body);
         }
-        return new ResponseBuilder()
-                .withStatusCode(HTTPStatusCodes._404.getCode())
-                .withHeader("")
-                .withBody("")
-                .build();
     }
 
 }
