@@ -1,5 +1,6 @@
 package http.routes;
 
+import http.HTTPMethodsHeader;
 import http.HTTPStatusCodes;
 import http.Methods;
 import http.Response;
@@ -9,26 +10,27 @@ import http.Route;
 import java.util.Arrays;
 import java.util.List;
 
-public class MethodOptions2 implements Route {
-    final List<String> headers;
-    final String headersResponse;
+import static http.Methods.*;
 
-    public MethodOptions2() {
-        headers = Arrays.asList(Methods.GET.getMethod(), Methods.HEAD.getMethod(), Methods.OPTIONS.getMethod(), Methods.PUT.getMethod(), Methods.POST.getMethod());
-        headersResponse = String.format("Allow: %s, %s, %s, %s, %s", headers.get(0), headers.get(1), headers.get(2), headers.get(3), headers.get(4));
+public class MethodOptions2 implements Route {
+
+    public List<Methods> allowedMethods() {
+        return Arrays.asList(GET, HEAD, OPTIONS, PUT, POST);
     }
+
     @Override
-    public Response response(String method, String body) {
-        if (headers.contains(method)) {
+    public Response response(Methods method, String body) {
+        String httpMethods = HTTPMethodsHeader.options2(allowedMethods());
+        if (allowedMethods().contains(method)) {
             return new ResponseBuilder()
                     .withStatusCode(HTTPStatusCodes._200.getCode())
-                    .withHeader(headersResponse)
+                    .withHeader(httpMethods)
                     .withBody("")
                     .build();
         }
         return new ResponseBuilder()
                 .withStatusCode(HTTPStatusCodes._405.getCode())
-                .withHeader(headersResponse)
+                .withHeader(httpMethods)
                 .withBody("")
                 .build();
     }

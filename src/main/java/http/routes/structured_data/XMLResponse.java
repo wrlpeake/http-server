@@ -1,19 +1,13 @@
-package http.routes;
+package http.routes.structured_data;
 
-import http.HTTPMethodsHeader;
-import http.HTTPStatusCodes;
-import http.Methods;
-import http.Response;
-import http.ResponseBuilder;
-import http.Route;
+import http.*;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static http.Methods.GET;
-import static http.Methods.HEAD;
+import static http.Methods.*;
 
-public class Redirect implements Route {
+public class XMLResponse implements Route {
 
     public List<Methods> allowedMethods() {
         return Arrays.asList(GET, HEAD);
@@ -21,12 +15,13 @@ public class Redirect implements Route {
 
     @Override
     public Response response(Methods method, String body) {
-        String httpMethods = HTTPMethodsHeader.redirect(allowedMethods());
+        String xmlBody = "<note><body>XML Response</body></note>";
+        String httpMethods = HTTPMethodsHeader.xml(allowedMethods());
         if (allowedMethods().contains(method)) {
             return new ResponseBuilder()
-                    .withStatusCode(HTTPStatusCodes._301.getCode())
+                    .withStatusCode(HTTPStatusCodes._200.getCode())
                     .withHeader(httpMethods)
-                    .withBody("")
+                    .withBody(xmlBody)
                     .build();
         }
         return new ResponseBuilder()

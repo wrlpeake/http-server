@@ -1,7 +1,7 @@
 package http.routes.structured_data;
 
-import http.ContentTypes;
 import http.HTTPStatusCodes;
+import http.HTTPMethodsHeader;
 import http.Methods;
 import http.Response;
 import http.ResponseBuilder;
@@ -10,31 +10,29 @@ import org.json.JSONObject;
 import java.util.Arrays;
 import java.util.List;
 
+import static http.Methods.GET;
+import static http.Methods.HEAD;
 
 public class JSONResponse implements Route {
-    final static String CRLF = "\r\n";
-    final List<String> headers;
-    final String headersResponse;
-    final JSONObject jsonBody;
 
-    public JSONResponse() {
-        headers = Arrays.asList(ContentTypes.CONTENT_TYPE_JSON.getType(), Methods.GET.getMethod(), Methods.HEAD.getMethod());
-        headersResponse = String.format("%s%sAllow: %s, %s", headers.get(0), CRLF, headers.get(1), headers.get(2));
-        jsonBody = new JSONObject("{ key1: 'value1', key2: 'value2' }");
+    public List<Methods> allowedMethods() {
+        return Arrays.asList(GET, HEAD);
     }
 
     @Override
-    public Response response(String method, String body) {
-        if (headers.contains(method)) {
+    public Response response(Methods method, String body) {
+        JSONObject jsonBody = new JSONObject("{ key1: 'value1', key2: 'value2' }");
+        String httpMethods = HTTPMethodsHeader.json(allowedMethods());
+        if (allowedMethods().contains(method)) {
             return new ResponseBuilder()
                     .withStatusCode(HTTPStatusCodes._200.getCode())
-                    .withHeader(headersResponse)
+                    .withHeader(httpMethods)
                     .withBody(jsonBody.toString())
                     .build();
         }
         return new ResponseBuilder()
                 .withStatusCode(HTTPStatusCodes._405.getCode())
-                .withHeader(headersResponse)
+                .withHeader(httpMethods)
                 .withBody("")
                 .build();
     }

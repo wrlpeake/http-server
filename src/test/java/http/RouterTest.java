@@ -2,18 +2,19 @@ package http;
 
 import org.junit.jupiter.api.Test;
 
+import static http.Methods.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RouterTest {
     Router router = new Router();
-    String method;
+    Methods method;
     String path;
     String body;
     String expectedResponse;
 
     @Test
     public void simpleGetRouteTest() {
-        method = "GET";
+        method = GET;
         path = "/simple_get";
         body = "";
 
@@ -24,7 +25,7 @@ public class RouterTest {
 
     @Test
     public void routeNotFoundTest() {
-        method = "POST";
+        method = POST;
         path = "/does_not_exist";
         body = "foobar";
         expectedResponse = "HTTP/1.1 404 Not Found\r\n\r\n";
@@ -34,7 +35,7 @@ public class RouterTest {
 
     @Test
     public void routeExistsButMethodNotAllowed405Test() {
-        method = "HEAD";
+        method = HEAD;
         path = "/echo_body";
         body = "foobar";
 
@@ -45,7 +46,7 @@ public class RouterTest {
 
     @Test
     public void simpleGetBodyRouteTest() {
-        method = "GET";
+        method = GET;
         path = "/simple_get_with_body";
         body = "";
 
@@ -56,7 +57,7 @@ public class RouterTest {
 
     @Test
     public void headRequestRouteTest() {
-        method = "HEAD";
+        method = HEAD;
         path = "/head_request";
         body = "";
 
@@ -67,7 +68,7 @@ public class RouterTest {
 
     @Test
     public void redirectRouteTest() {
-        method = "GET";
+        method = GET;
         path = "/redirect";
         body = "";
 
@@ -78,7 +79,7 @@ public class RouterTest {
 
     @Test
     public void methodOptionsRouteTest() {
-        method = "OPTIONS";
+        method = OPTIONS;
         path = "/method_options";
         body = "";
 
@@ -89,7 +90,7 @@ public class RouterTest {
 
     @Test
     public void methodOptions2RouteTest() {
-        method = "OPTIONS";
+        method = OPTIONS;
         path = "/method_options2";
         body = "";
 
@@ -100,7 +101,7 @@ public class RouterTest {
 
     @Test
     public void echoBodyRouteTest() {
-        method = "POST";
+        method = POST;
         path = "/echo_body";
         body = "Once upon a time...";
 
@@ -111,7 +112,7 @@ public class RouterTest {
 
     @Test
     public void textResponseRouteTest() {
-        method = "GET";
+        method = GET;
         path = "/text_response";
         body = "";
 
@@ -123,7 +124,7 @@ public class RouterTest {
 
     @Test
     public void HTMLResponseRouteTest() {
-        method = "GET";
+        method = GET;
         path = "/html_response";
         body = "";
 
@@ -135,12 +136,24 @@ public class RouterTest {
 
     @Test
     public void JSONResponseRouteTest() {
-        method = "GET";
+        method = GET;
         path = "/json_response";
         body = "";
 
         expectedResponse = "HTTP/1.1 200 OK\r\nContent-Type: application/json;charset=utf-8\r\nAllow: GET, HEAD\r\n\r\n" +
                 "{\"key1\":\"value1\",\"key2\":\"value2\"}";
+        Response response = router.getResponse(method, path, body);
+        assertEquals(expectedResponse, response.responseString());
+    }
+
+    @Test
+    public void XMLResponseRouteTest() {
+        method = GET;
+        path = "/xml_response";
+        body = "";
+
+        expectedResponse = "HTTP/1.1 200 OK\r\nContent-Type: application/xml;charset=utf-8\r\nAllow: GET, HEAD\r\n\r\n" +
+                "<note><body>XML Response</body></note>";
         Response response = router.getResponse(method, path, body);
         assertEquals(expectedResponse, response.responseString());
     }
