@@ -3,11 +3,13 @@ package http;
 import java.io.IOException;
 import java.io.InputStream;
 
+import static http.Methods.*;
+
 public class RequestParser {
 
     String request;
     String parameters;
-    String method;
+    Methods method;
     String path;
     String body;
 
@@ -34,11 +36,14 @@ public class RequestParser {
     }
 
     public RequestParser withMethod() {
-        this.method = this.parameters.split(" ")[0];
+        String method = this.parameters.split(" ")[0];
+        if (getMethodsHashMap().containsKey(method)) {
+            this.method = getMethodsHashMap().get(method);
+        }
         return this;
     }
 
-    public String buildMethod() {
+    public Methods buildMethod() {
         return method;
     }
 

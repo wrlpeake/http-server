@@ -25,7 +25,7 @@ public class Router {
         routeHashMap.put("/xml_response", new XMLResponse());
     }
 
-    public Response getResponse(String method, String path, String body) {
+    public Response getResponse(Methods method, String path, String body) {
         if (routeHashMap.containsKey(path)) {
             Route route = routeHashMap.get(path);
             return route.response(method, body);
@@ -34,5 +34,5 @@ public class Router {
             return notFound.response(method, body);
         }
     }
-
+//
 }

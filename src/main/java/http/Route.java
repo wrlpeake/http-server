@@ -1,7 +1,7 @@
 package http;
 
 public interface Route {
-    default Response response(String method, String body) {
+    default Response response(Methods method, String body) {
         return new ResponseBuilder()
                 .withStatusCode(null)
                 .withHeader(null)

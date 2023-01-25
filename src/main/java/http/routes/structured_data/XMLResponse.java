@@ -5,29 +5,28 @@ import http.*;
 import java.util.Arrays;
 import java.util.List;
 
-public class XMLResponse implements Route {
-    final static String CRLF = "\r\n";
-    final List<String> headers;
-    final String headersResponse;
-    final String xmlBody;
+import static http.Methods.*;
 
-    public XMLResponse() {
-        headers = Arrays.asList(Methods.GET.getMethod(), Methods.HEAD.getMethod());
-        headersResponse = String.format("%s%sAllow: %s, %s", ContentTypes.CONTENT_TYPE_XML.getType(), CRLF, headers.get(0), headers.get(1));
-        xmlBody = "<note><body>XML Response</body></note>";
+public class XMLResponse implements Route {
+
+    public List<Methods> allowedMethods() {
+        return Arrays.asList(GET, HEAD);
     }
+
     @Override
-    public Response response(String method, String body) {
-        if (headers.contains(method)) {
+    public Response response(Methods method, String body) {
+        String xmlBody = "<note><body>XML Response</body></note>";
+        String httpMethods = HTTPMethodsHeader.xml(allowedMethods());
+        if (allowedMethods().contains(method)) {
             return new ResponseBuilder()
                     .withStatusCode(HTTPStatusCodes._200.getCode())
-                    .withHeader(headersResponse)
+                    .withHeader(httpMethods)
                     .withBody(xmlBody)
                     .build();
         }
         return new ResponseBuilder()
                 .withStatusCode(HTTPStatusCodes._405.getCode())
-                .withHeader(headersResponse)
+                .withHeader(httpMethods)
                 .withBody("")
                 .build();
     }

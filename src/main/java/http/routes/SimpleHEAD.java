@@ -1,34 +1,31 @@
 package http.routes;
 
-import http.HTTPStatusCodes;
-import http.Methods;
-import http.Response;
-import http.ResponseBuilder;
-import http.Route;
+import http.*;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class SimpleHEAD implements Route {
-    final List<String> headers;
-    final String headersResponse;
+import static http.Methods.*;
 
-    public SimpleHEAD() {
-        headers = Arrays.asList(Methods.HEAD.getMethod(), Methods.OPTIONS.getMethod());
-        headersResponse = String.format("Allow: %s, %s", headers.get(0), headers.get(1));
+public class SimpleHEAD implements Route {
+
+    public List<Methods> allowedMethods() {
+        return Arrays.asList(HEAD, OPTIONS);
     }
+
     @Override
-    public Response response(String method, String body) {
-        if (headers.contains(method)) {
+    public Response response(Methods method, String body) {
+        String httpMethods = HTTPMethodsHeader.head(allowedMethods());
+        if (allowedMethods().contains(method)) {
             return new ResponseBuilder()
                     .withStatusCode(HTTPStatusCodes._200.getCode())
-                    .withHeader(headersResponse)
+                    .withHeader(httpMethods)
                     .withBody(body)
                     .build();
         }
         return new ResponseBuilder()
                 .withStatusCode(HTTPStatusCodes._405.getCode())
-                .withHeader(headersResponse)
+                .withHeader(httpMethods)
                 .withBody("")
                 .build();
     }

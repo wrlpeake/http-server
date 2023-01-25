@@ -4,10 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Removed `CONTENT_TYPES` from the `headers&lt;&gt;` array to address edge case of the content type producing a 200 OK response in error.">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="b4254501-5f23-4dab-8f16-b42931b65262" name="Changes" comment="Adds `NotFound` Route to `http.routes` package">
+      <change afterPath="$PROJECT_DIR$/src/main/java/http/HTTPMethodsHeader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/http/routes/MethodNotAllowed.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/Request.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/Route.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/Router.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/routes/EchoBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/routes/EchoBody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/routes/MethodOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/routes/MethodOptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/routes/MethodOptions2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/routes/MethodOptions2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/routes/NotFound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/routes/NotFound.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/routes/Redirect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/routes/Redirect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/routes/SimpleGET.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/routes/SimpleGET.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/routes/SimpleGETWithBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/routes/SimpleGETWithBody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/routes/SimpleHEAD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/routes/SimpleHEAD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/routes/structured_data/HTMLResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/routes/structured_data/HTMLResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/routes/structured_data/JSONResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/routes/structured_data/JSONResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/routes/structured_data/TextResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/routes/structured_data/TextResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/routes/structured_data/XMLResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/http/routes/structured_data/XMLResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/http/RouterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/http/RouterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +108,7 @@
       <workItem from="1671553771364" duration="56304000" />
       <workItem from="1674468999171" duration="763000" />
       <workItem from="1674555376444" duration="724000" />
-      <workItem from="1674557164792" duration="4705000" />
+      <workItem from="1674557164792" duration="13455000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1671554143949</created>
@@ -339,7 +355,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674226608030</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Adds `NotFound` Route to `http.routes` package">
+      <created>1674642193165</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1674642193165</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,7 +380,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Refactoring routes by extracting them into their own Routes package and classes" />
     <MESSAGE value="Extracted codes into an `enum` to remove duplication." />
     <MESSAGE value="Extracted codes into an `enum` to remove duplication. Adds 405 method not allowed responses to current routes." />
     <MESSAGE value="Extracted codes into an `enum` to remove duplication. Adds 405 method not allowed responses to current routes and new `/redirect` route." />
@@ -382,6 +404,7 @@
     <MESSAGE value="Implements `return a JSON response` feature. Adds `implementation 'org.json:json:20171018'` to `build.gradle` to import `org.jsonObject` class." />
     <MESSAGE value="Implements `Returning an XML response` feature by adding new `Route` XMLResponse.java" />
     <MESSAGE value="Removed `CONTENT_TYPES` from the `headers&lt;&gt;` array to address edge case of the content type producing a 200 OK response in error." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed `CONTENT_TYPES` from the `headers&lt;&gt;` array to address edge case of the content type producing a 200 OK response in error." />
+    <MESSAGE value="Adds `NotFound` Route to `http.routes` package" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adds `NotFound` Route to `http.routes` package" />
   </component>
 </project>

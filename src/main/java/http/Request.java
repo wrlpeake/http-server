@@ -3,11 +3,11 @@ package http;
 public class Request {
     private final String request;
     private final String parameters;
-    private final String method;
+    private final Methods method;
     private final String path;
     private final String body;
 
-    public Request(String request, String parameters, String method, String path, String body) {
+    public Request(String request, String parameters, Methods method, String path, String body) {
         this.request = request;
         this.parameters = parameters;
         this.method = method;
@@ -23,7 +23,7 @@ public class Request {
         return this.parameters;
     }
 
-    public String getMethod() {
+    public Methods getMethod() {
         return this.method;
     }
 
